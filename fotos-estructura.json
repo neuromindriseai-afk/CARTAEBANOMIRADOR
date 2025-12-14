@@ -1,0 +1,15 @@
+{
+  "fotos": {
+    "desgranado-mixto": "fotos-ebano/desgranado-mixto.jpg",
+    "picada-para-2": "fotos-ebano/picada-para-2.jpg",
+    "picada-para-1": "fotos-ebano/picada-para-1.jpg",
+    "sierra-frita": "fotos-ebano/sierra-frita.jpg",
+    "limonada-cherry": "fotos-ebano/limonada-cherry.jpg",
+    "limonada-coco": "fotos-ebano/limonada-coco.jpg",
+    "bandeja-paisa": "fotos-ebano/bandeja-paisa.jpg",
+    "churrasco": "fotos-ebano/churrasco.jpg",
+    "camarones": "fotos-ebano/camarones.jpg"
+  },
+  "nota": "Las fotos deben guardarse en la carpeta 'fotos-ebano' con estos nombres exactos. Si una foto no está disponible, se mostrará un placeholder elegante con el texto 'Foto próximamente'."
+}
+

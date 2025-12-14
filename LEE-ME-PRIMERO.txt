@@ -1,0 +1,66 @@
+═══════════════════════════════════════════════════════════════
+🚀 INSTRUCCIONES PARA SUBIR TODOS LOS ARCHIVOS A GITHUB
+═══════════════════════════════════════════════════════════════
+
+✅ YA ESTÁ TODO LISTO - Solo falta hacer PUSH
+
+Los archivos que se van a subir:
+  ✅ index.html
+  ✅ styles.css
+  ✅ script.js
+  ✅ manifest.json
+  ✅ vercel.json
+  ✅ fotos-ebano/ (todas las fotos)
+  ✅ Y todos los demás archivos
+
+═══════════════════════════════════════════════════════════════
+OPCIÓN 1: GITHUB DESKTOP (MÁS FÁCIL) ⭐ RECOMENDADO
+═══════════════════════════════════════════════════════════════
+
+1. Abre GitHub Desktop
+2. File → "Add Local Repository"
+3. Selecciona esta carpeta:
+   /Users/neuromindaiyoutubeus/Desktop/cartaebano-temp
+4. Verás un commit listo para hacer push
+5. Haz clic en "Push origin" (arriba a la derecha)
+6. ¡LISTO!
+
+═══════════════════════════════════════════════════════════════
+OPCIÓN 2: TERMINAL (necesitas crear un token)
+═══════════════════════════════════════════════════════════════
+
+PASO 1: Crear token en GitHub
+─────────────────────────────
+1. Ve a: https://github.com/settings/tokens
+2. "Generate new token" → "Generate new token (classic)"
+3. Nombre: "Vercel Push"
+4. Permisos: marca solo "repo" (todos los sub-items)
+5. "Generate token"
+6. COPIA EL TOKEN (solo se muestra una vez)
+
+PASO 2: Hacer push
+──────────────────
+Abre Terminal y ejecuta:
+
+cd "/Users/neuromindaiyoutubeus/Desktop/cartaebano-temp"
+git push origin main
+
+Cuando te pida:
+  Username: neuromindriseai-afk
+  Password: (pega el TOKEN, no tu contraseña)
+
+═══════════════════════════════════════════════════════════════
+DESPUÉS DEL PUSH:
+═══════════════════════════════════════════════════════════════
+
+1. Ve a GitHub.com y verifica que veas:
+   ✅ index.html (directamente, no en carpeta)
+   ✅ styles.css
+   ✅ script.js
+   ✅ fotos-ebano/ (carpeta con fotos)
+
+2. Ve a Vercel y haz "Redeploy"
+
+3. ¡Tu carta debería funcionar perfectamente! 🎉
+
+═══════════════════════════════════════════════════════════════
