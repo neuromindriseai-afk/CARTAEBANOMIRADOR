@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestra carta digital: picadas, carnes, pescados y bebidas. A 1.500m en Pereira.">
+    <meta property="og:title" content="Carta Mirador Ébano - Pereira">
+    <meta property="og:description" content="Carta digital interactiva del Mirador Restaurante Ébano. Picadas, carnes, pescados y bebidas con los mejores sabores del Eje Cafetero.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#D4AF37">
+    <meta name="author" content="Mirador Restaurante Ébano">
+    <meta name="keywords" content="restaurante, carta digital, Ébano, Pereira, comida colombiana, picadas, parrillas, pescados">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miradorebanopereira.com/carta">
+    <meta property="og:title" content="Carta Digital - Mirador Restaurante Ébano">
+    <meta property="og:description" content="Descubre nuestra carta digital interactiva: picadas, carnes, pescados y bebidas. A 1.500m en Pereira, Risaralda.">
+    <meta property="og:image" content="https://miradorebanopereira.com/carta/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://miradorebanopereira.com/carta">
+    <meta property="twitter:title" content="Carta Digital - Mirador Restaurante Ébano">
+    <meta property="twitter:description" content="Descubre nuestra carta digital interactiva: picadas, carnes, pescados y bebidas.">
+    <meta property="twitter:image" content="https://miradorebanopereira.com/carta/og-image.jpg">
+    
+    <!-- Favicon -->
+    <!-- Nota: Si tienes favicon.ico y apple-touch-icon.png, descomenta estas líneas -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> -->
+    
+    <title>Carta Mirador Ébano - Pereira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://wa.me">
+    <link rel="dns-prefetch" href="https://instagram.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- html2pdf.js para descargar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <!-- Structured Data (JSON-LD) para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Mirador Restaurante Ébano",
+        "image": "https://miradorebanopereira.com/logo.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Frente a los tanques de reservas de aguas, Vía Cuba, Villa Verde",
+            "addressLocality": "Pereira",
+            "addressRegion": "Risaralda",
+            "addressCountry": "CO"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "4.8133",
+            "longitude": "-75.6961"
+        },
+        "url": "https://www.miradorebanopereira.com",
+        "telephone": "+573104827580",
+        "email": "ebanopereiramiradorrestaurante@gmail.com",
+        "priceRange": "$$",
+        "servesCuisine": "Colombian",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "16:00",
+                "closes": "23:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "12:00",
+                "closes": "00:00"
+            }
+        ],
+        "sameAs": [
+            "https://instagram.com/miradorebanopereira"
+        ],
+        "menu": "https://miradorebanopereira.com/carta"
+    }
+    </script>
+    
+    <!-- Google Analytics (reemplazar con tu ID real) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+</head>
+<body>
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <div class="logo-container">
+                <h1 class="logo-text">ÉBANO</h1>
+                <div class="logo-line"></div>
+            </div>
+            <h2 class="welcome-headline">Bienvenido a Ébano</h2>
+            <p class="welcome-subheadline">Cuéntanos tu nombre para una experiencia personalizada</p>
+            <form id="welcome-form" class="welcome-form" novalidate>
+                <input 
+                    type="text" 
+                    id="client-name-input" 
+                    class="name-input" 
+                    placeholder="Tu nombre..." 
+                    required
+                    minlength="2"
+                    maxlength="50"
+                    autocomplete="name"
+                    aria-label="Ingresa tu nombre"
+                    aria-required="true"
+                >
+                <span class="input-error" id="name-error" role="alert" aria-live="polite"></span>
+                <button type="submit" class="btn-enter" aria-label="Entrar a la carta">Entrar a la Carta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: CARTA INTERACTIVA -->
+    <div id="menu-screen" class="menu-screen hidden">
+        <!-- HEADER STICKY -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="header-logo">ÉBANO</h1>
+                </div>
+                <div class="header-center">
+                    <span class="greeting-text">Hola, <span id="client-name-display" class="client-name">Cliente</span></span>
+                </div>
+                <div class="header-right">
+                    <button id="search-toggle" class="header-icon-btn" aria-label="Buscar productos" title="Buscar">
+                        🔍
+                    </button>
+                    <button id="favorites-toggle" class="header-icon-btn favorites-btn" aria-label="Ver favoritos" title="Favoritos">
+                        ❤️
+                    </button>
+                    <button id="dark-mode-toggle" class="header-icon-btn" aria-label="Cambiar modo oscuro" title="Modo oscuro">
+                        🌙
+                    </button>
+                    <a href="https://wa.me/573104827580" target="_blank" class="header-link" aria-label="Contactar por WhatsApp">
+                        📱 WhatsApp
+                    </a>
+                    <a href="https://instagram.com/miradorebanopereira" target="_blank" class="header-link" aria-label="Seguir en Instagram">
+                        📷 Instagram
+                    </a>
+                    <button id="download-pdf-btn" class="header-icon-btn pdf-btn" aria-label="Descargar carta en PDF" title="Descargar PDF">
+                        📄 PDF
+                    </button>
+                    <button id="share-carta-btn" class="header-icon-btn share-btn" aria-label="Compartir carta" title="Compartir carta">
+                        🔗 Compartir
+                    </button>
+                    <button id="change-name-btn" class="btn-change-name" title="Cambiar nombre" aria-label="Cambiar nombre">Cambiar</button>
+                </div>
+            </div>
+            <div class="header-border"></div>
+            <!-- Búsqueda -->
+            <div id="search-container" class="search-container hidden">
+                <input 
+                    type="search" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Buscar productos..." 
+                    aria-label="Buscar productos en la carta"
+                >
+                <button id="search-close" class="search-close" aria-label="Cerrar búsqueda">✕</button>
+            </div>
+        </header>
+
+        <!-- NAVEGACIÓN POR CATEGORÍAS -->
+        <nav class="category-nav" id="category-nav" aria-label="Navegación de categorías">
+            <a href="#main-content" class="skip-link">Saltar al contenido</a>
+            <button class="category-tab active" data-category="recomendados" aria-label="Ver productos más vendidos">
+                🔥 Más Vendidos
+            </button>
+            <button class="category-tab" data-category="almuerzos" id="tab-almuerzos" aria-label="Ver almuerzos de fin de semana">
+                🍽️ Almuerzos Fin de Semana
+            </button>
+            <button class="category-tab" data-category="pescados" aria-label="Ver pescados y mariscos">
+                🌊 Pescados y Mariscos
+            </button>
+            <button class="category-tab" data-category="especiales" aria-label="Ver platos especiales">
+                👑 Especiales
+            </button>
+            <button class="category-tab" data-category="carnes" aria-label="Ver carnes y parrillas">
+                🍖 Carnes y Parrillas
+            </button>
+            <button class="category-tab" data-category="desgranados" aria-label="Ver desgranados">
+                🥩 Desgranados
+            </button>
+            <button class="category-tab" data-category="chicharrones" aria-label="Ver chicharrones">
+                🐷 Chicharrones
+            </button>
+            <button class="category-tab" data-category="tardeando" aria-label="Ver opciones para tardear">
+                ☕ Para Tardear
+            </button>
+            <button class="category-tab" data-category="hamburguesas" aria-label="Ver hamburguesas">
+                🍔 Hamburguesas
+            </button>
+            <button class="category-tab" data-category="entradas" aria-label="Ver entradas">
+                🥟 Entradas
+            </button>
+            <button class="category-tab" data-category="adicionales" aria-label="Ver acompañamientos">
+                🍜 Acompañamientos
+            </button>
+            <button class="category-tab" data-category="menuinfantil" aria-label="Ver menú infantil">
+                🧒 Menú Infantil
+            </button>
+            <button class="category-tab" data-category="postres" aria-label="Ver postres">
+                🍰 Postres
+            </button>
+            <button class="category-tab" data-category="bebidas" aria-label="Ver bebidas">
+                🥤 Bebidas
+            </button>
+            <button class="category-tab" data-category="favoritos" id="tab-favoritos" aria-label="Ver productos favoritos">
+                ❤️ Mis Favoritos
+            </button>
+        </nav>
+
+        <!-- Menú hamburguesa móvil -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <div class="mobile-menu-content">
+                <button class="mobile-menu-close" aria-label="Cerrar menú">✕</button>
+                <h2>Menú</h2>
+                <div class="mobile-menu-items"></div>
+            </div>
+        </div>
+
+        <!-- Mensaje Instagram siempre visible -->
+        <div class="instagram-banner">
+            <div class="instagram-banner-content">
+                <span class="instagram-icon">📸</span>
+                <p class="instagram-text">
+                    ¿Tomaste fotos en Ébano? <strong>Etiquétanos en @miradorebanopereira</strong> 
+                    <button class="copy-instagram-btn" data-username="@miradorebanopereira" aria-label="Copiar usuario de Instagram">📋 Copiar</button>
+                    y repostearemos tus fotos. ¡Te daremos cupones de descuento por DM! 🎁
+                </p>
+            </div>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO -->
+        <main class="main-content" id="main-content" role="main">
+            <!-- Indicador de carga -->
+            <div id="loading-indicator" class="loading-indicator hidden">
+                <div class="spinner"></div>
+                <p>Cargando productos...</p>
+            </div>
+            
+            <!-- Resultados de búsqueda -->
+            <div id="search-results" class="search-results hidden">
+                <h2 id="search-results-title" class="search-results-title"></h2>
+                <div id="search-results-content" class="products-grid"></div>
+            </div>
+
+            <!-- Contenido de categoría -->
+            <div id="category-content" class="category-content">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+        </main>
+
+        <!-- Botón Volver Arriba -->
+        <button id="scroll-top-btn" class="scroll-top-btn hidden" aria-label="Volver arriba" title="Volver arriba">
+            ↑
+        </button>
+
+        <!-- Modal de Imagen -->
+        <div id="image-modal" class="image-modal hidden" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+            <button class="modal-close" aria-label="Cerrar">✕</button>
+            <button class="modal-prev" aria-label="Imagen anterior">‹</button>
+            <button class="modal-next" aria-label="Imagen siguiente">›</button>
+            <div class="modal-content">
+                <img id="modal-image" src="" alt="" />
+                <p id="modal-caption"></p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📍 Ubicación</h3>
+                    <p>Ébano Mirador Picnic<br>Frente a los tanques de reservas de aguas<br>Vía Cuba, Villa Verde<br>Pereira, Risaralda</p>
+                    <a href="https://www.google.com/maps?q=%C3%89bano+Mirador+Picnic,+Frente+a+los+tanques+de+reservas+de+aguas+y+aguas,+Via+cuba,+Villa+Verde,+Pereira,+Risaralda&ftid=0x8e387d23d983eb47:0xedb19327040254bf&entry=gps" 
+                       target="_blank" 
+                       class="btn-share-location"
+                       aria-label="Abrir ubicación en Google Maps">
+                        🗺️ Compartir Ubicación
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h3>📞 Contacto</h3>
+                    <p>
+                        📱 <a href="https://wa.me/573104827580" target="_blank">+57 310-4827580</a><br>
+                        📧 <a href="mailto:ebanopereiramiradorrestaurante@gmail.com">ebanopereiramiradorrestaurante@gmail.com</a><br>
+                        📷 <a href="https://instagram.com/miradorebanopereira" target="_blank">@miradorebanopereira</a>
+                    </p>
+                    <div class="instagram-cta">
+                        <p class="cta-text">✨ Síguenos para recibir cupones exclusivos y promociones especiales</p>
+                        <a href="https://instagram.com/miradorebanopereira" target="_blank" class="btn-follow-instagram">
+                            👉 Seguir en Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>🕐 Horarios</h3>
+                    <p>
+                        <strong>Lunes a Viernes:</strong><br>
+                        4:00 PM - 11:00 PM<br><br>
+                        <strong>Sábado y Domingo:</strong><br>
+                        12:00 PM - 12:00 AM
+                    </p>
+                    <p class="horario-note">*Horarios ajustables según temporada</p>
+                </div>
+                <div class="footer-section">
+                    <h3>🎉 Eventos</h3>
+                    <p>¿Necesitas espacio para tu evento?</p>
+                    <a href="https://www.miradorebanopereira.com" target="_blank" class="btn-events">
+                        🌐 Ver Servicios de Eventos
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mirador Restaurante Ébano. Todos los derechos reservados.</p>
+                <div class="dev-badge">
+                    <p>Desarrollado por <a href="https://instagram.com/agenciagenio.ia" target="_blank">@agenciagenio.ia</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
